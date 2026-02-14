@@ -3,15 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kai Clawd 🦞 — AI Operations Partner</title>
+<title>TechQuest — AI-Powered Project Management</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#0a0a0f;--bg2:#12121a;--card:#1a1a2e;
-  --lobster:#e8453c;--coral:#ff6b5a;--glow:rgba(232,69,60,.35);
-  --text:#e8e8f0;--muted:#8888a0;--accent:#ff8a7a;
-  --glass:rgba(255,255,255,.04);--border:rgba(255,255,255,.06);
+  --bg:#0a0a0f;--bg2:#0d0d14;--card:#111118;
+  --cyan:#00c6ff;--green:#00e676;--teal:#00d4aa;
+  --glow:rgba(0,198,255,.25);--glow-green:rgba(0,230,118,.2);
+  --text:#e8e8f0;--muted:#8888a0;--accent:#00e676;
+  --glass:rgba(255,255,255,.03);--border:rgba(255,255,255,.06);
+  --gradient:linear-gradient(135deg,var(--cyan),var(--green));
 }
 html{scroll-behavior:smooth}
 body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6}
@@ -19,22 +21,22 @@ body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--tex
 /* === ANIMATED BG === */
 .bg-anim{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:hidden}
 .bg-anim::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,var(--glow),transparent 70%);top:-100px;right:-150px;animation:drift 18s ease-in-out infinite alternate}
-.bg-anim::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,90,.15),transparent 70%);bottom:-50px;left:-100px;animation:drift2 22s ease-in-out infinite alternate}
+.bg-anim::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,var(--glow-green),transparent 70%);bottom:-50px;left:-100px;animation:drift2 22s ease-in-out infinite alternate}
 @keyframes drift{0%{transform:translate(0,0) scale(1)}100%{transform:translate(-80px,120px) scale(1.2)}}
 @keyframes drift2{0%{transform:translate(0,0) scale(1)}100%{transform:translate(60px,-80px) scale(1.15)}}
 
 /* === PARTICLES === */
 .particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
-.particle{position:absolute;width:2px;height:2px;background:var(--coral);border-radius:50%;opacity:0;animation:float linear infinite}
+.particle{position:absolute;width:2px;height:2px;background:var(--cyan);border-radius:50%;opacity:0;animation:float linear infinite}
 .particle:nth-child(1){left:10%;animation-duration:12s;animation-delay:0s}
-.particle:nth-child(2){left:25%;animation-duration:15s;animation-delay:2s}
+.particle:nth-child(2){left:25%;animation-duration:15s;animation-delay:2s;background:var(--green)}
 .particle:nth-child(3){left:40%;animation-duration:10s;animation-delay:4s}
-.particle:nth-child(4){left:55%;animation-duration:14s;animation-delay:1s}
+.particle:nth-child(4){left:55%;animation-duration:14s;animation-delay:1s;background:var(--green)}
 .particle:nth-child(5){left:70%;animation-duration:11s;animation-delay:3s}
-.particle:nth-child(6){left:85%;animation-duration:13s;animation-delay:5s}
+.particle:nth-child(6){left:85%;animation-duration:13s;animation-delay:5s;background:var(--green)}
 .particle:nth-child(7){left:15%;animation-duration:16s;animation-delay:6s}
-.particle:nth-child(8){left:60%;animation-duration:9s;animation-delay:2.5s}
-@keyframes float{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:.6}90%{opacity:.6}100%{transform:translateY(-10vh) scale(1.5);opacity:0}}
+.particle:nth-child(8){left:60%;animation-duration:9s;animation-delay:2.5s;background:var(--green)}
+@keyframes float{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:.5}90%{opacity:.5}100%{transform:translateY(-10vh) scale(1.5);opacity:0}}
 
 /* === LAYOUT === */
 .container{max-width:900px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
@@ -43,23 +45,23 @@ section{padding:80px 0}
 /* === HERO === */
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative}
 .hero-content{animation:fadeUp .8s ease-out}
-.hero h1{font-size:clamp(2.5rem,8vw,4.5rem);font-weight:700;letter-spacing:-1px;margin-bottom:8px}
-.hero h1 .lobster{color:var(--lobster);display:inline-block;animation:pulse 3s ease-in-out infinite}
-.hero .tagline{font-size:clamp(1.1rem,3vw,1.5rem);color:var(--muted);font-weight:300;margin-bottom:32px}
+.hero-logo{width:140px;height:auto;margin-bottom:24px;filter:drop-shadow(0 0 30px rgba(0,198,255,.3));animation:logoPulse 4s ease-in-out infinite}
+.hero h1{font-size:clamp(2.5rem,8vw,4.5rem);font-weight:700;letter-spacing:-1px;margin-bottom:8px;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero .tagline{font-size:clamp(1.1rem,3vw,1.5rem);color:var(--muted);font-weight:300;margin-bottom:12px}
 .hero .sub{font-size:.95rem;color:var(--muted);opacity:.6}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+@keyframes logoPulse{0%,100%{filter:drop-shadow(0 0 20px rgba(0,198,255,.2))}50%{filter:drop-shadow(0 0 40px rgba(0,198,255,.4))}}
 @keyframes fadeUp{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
 
 /* === SECTION TITLES === */
 .section-title{font-size:clamp(1.6rem,5vw,2.2rem);font-weight:600;margin-bottom:12px;text-align:center}
-.section-title .accent{color:var(--coral)}
+.section-title .accent{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .section-sub{text-align:center;color:var(--muted);margin-bottom:48px;font-size:.95rem}
 
 /* === CARDS GRID === */
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
 .card{background:var(--glass);border:1px solid var(--border);border-radius:16px;padding:28px 24px;backdrop-filter:blur(12px);transition:all .3s ease;position:relative;overflow:hidden}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--lobster),transparent);opacity:0;transition:opacity .3s}
-.card:hover{transform:translateY(-4px);border-color:rgba(232,69,60,.2);box-shadow:0 8px 32px var(--glow)}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:0;transition:opacity .3s}
+.card:hover{transform:translateY(-4px);border-color:rgba(0,198,255,.2);box-shadow:0 8px 32px var(--glow)}
 .card:hover::before{opacity:1}
 .card-icon{font-size:2rem;margin-bottom:12px;display:block}
 .card h3{font-size:1.1rem;font-weight:600;margin-bottom:8px}
@@ -68,47 +70,47 @@ section{padding:80px 0}
 /* === STACK === */
 .stack-chain{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:32px}
 .stack-node{background:var(--glass);border:1px solid var(--border);border-radius:12px;padding:14px 20px;text-align:center;backdrop-filter:blur(8px);transition:all .3s;min-width:120px}
-.stack-node:hover{border-color:var(--lobster);box-shadow:0 0 20px var(--glow)}
+.stack-node:hover{border-color:var(--cyan);box-shadow:0 0 20px var(--glow)}
 .stack-node .model{font-weight:600;font-size:.95rem}
 .stack-node .provider{color:var(--muted);font-size:.75rem;margin-top:4px}
-.stack-arrow{color:var(--lobster);font-size:1.4rem;font-weight:700}
+.stack-arrow{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:1.4rem;font-weight:700}
 .stack-note{text-align:center;color:var(--muted);font-size:.88rem;max-width:600px;margin:0 auto}
 
 /* === AGENT SQUAD === */
 .agent-card{background:var(--glass);border:1px solid var(--border);border-radius:16px;padding:24px;backdrop-filter:blur(12px);transition:all .3s;margin-bottom:12px}
-.agent-card:hover{border-color:rgba(232,69,60,.2);box-shadow:0 4px 24px var(--glow)}
+.agent-card:hover{border-color:rgba(0,198,255,.2);box-shadow:0 4px 24px var(--glow)}
 .agent-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
 .agent-emoji{font-size:1.8rem}
 .agent-name{font-weight:600;font-size:1.1rem}
 .agent-role{color:var(--muted);font-size:.8rem}
 .agent-chain{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-.agent-chain span{background:rgba(232,69,60,.1);border:1px solid rgba(232,69,60,.15);border-radius:6px;padding:3px 10px;font-size:.75rem;color:var(--accent)}
-.agent-chain span:first-child{background:rgba(232,69,60,.2);border-color:rgba(232,69,60,.3);color:#fff}
+.agent-chain span{background:rgba(0,198,255,.08);border:1px solid rgba(0,198,255,.12);border-radius:6px;padding:3px 10px;font-size:.75rem;color:var(--teal)}
+.agent-chain span:first-child{background:rgba(0,198,255,.15);border-color:rgba(0,198,255,.25);color:#fff}
 
 /* === STATS === */
 .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
 .stat{text-align:center;padding:24px 16px;background:var(--glass);border:1px solid var(--border);border-radius:14px;backdrop-filter:blur(8px);transition:all .3s}
-.stat:hover{border-color:rgba(232,69,60,.2);box-shadow:0 4px 20px var(--glow)}
+.stat:hover{border-color:rgba(0,198,255,.2);box-shadow:0 4px 20px var(--glow)}
 .stat-icon{font-size:1.6rem;margin-bottom:8px}
-.stat-value{font-size:1.3rem;font-weight:700;color:var(--coral)}
+.stat-value{font-size:1.3rem;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .stat-label{font-size:.78rem;color:var(--muted);margin-top:4px}
 
 /* === ABOUT / TEAM === */
 .team{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
 .team-card{background:var(--glass);border:1px solid var(--border);border-radius:20px;padding:32px 28px;backdrop-filter:blur(12px);text-align:center;transition:all .3s}
-.team-card:hover{border-color:rgba(232,69,60,.2);box-shadow:0 8px 32px var(--glow)}
+.team-card:hover{border-color:rgba(0,198,255,.2);box-shadow:0 8px 32px var(--glow)}
 .team-avatar{font-size:3rem;margin-bottom:16px;display:block}
 .team-name{font-size:1.3rem;font-weight:700;margin-bottom:4px}
-.team-role{color:var(--coral);font-size:.85rem;font-weight:500;margin-bottom:16px}
+.team-role{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:.85rem;font-weight:500;margin-bottom:16px}
 .team-bio{color:var(--muted);font-size:.88rem;line-height:1.6}
 
 /* === PROJECT CTA === */
-.project-cta{background:linear-gradient(135deg,rgba(232,69,60,.08),rgba(255,107,90,.04));border:1px solid rgba(232,69,60,.15);border-radius:20px;padding:40px 32px;text-align:center;backdrop-filter:blur(12px);transition:all .3s}
-.project-cta:hover{border-color:rgba(232,69,60,.3);box-shadow:0 8px 40px var(--glow)}
+.project-cta{background:linear-gradient(135deg,rgba(0,198,255,.06),rgba(0,230,118,.03));border:1px solid rgba(0,198,255,.12);border-radius:20px;padding:40px 32px;text-align:center;backdrop-filter:blur(12px);transition:all .3s}
+.project-cta:hover{border-color:rgba(0,198,255,.25);box-shadow:0 8px 40px var(--glow)}
 .project-cta h3{font-size:1.4rem;font-weight:700;margin-bottom:8px}
-.project-cta .project-tag{display:inline-block;background:rgba(232,69,60,.15);border:1px solid rgba(232,69,60,.2);border-radius:20px;padding:4px 14px;font-size:.75rem;color:var(--coral);font-weight:500;margin-bottom:16px}
+.project-tag{display:inline-block;background:rgba(0,198,255,.1);border:1px solid rgba(0,198,255,.15);border-radius:20px;padding:4px 14px;font-size:.75rem;color:var(--cyan);font-weight:500;margin-bottom:16px}
 .project-cta p{color:var(--muted);font-size:.92rem;line-height:1.6;max-width:600px;margin:0 auto 24px}
-.project-link{display:inline-block;background:linear-gradient(135deg,var(--lobster),var(--coral));color:#fff;text-decoration:none;padding:12px 32px;border-radius:12px;font-weight:600;font-size:.95rem;transition:all .3s;box-shadow:0 4px 16px var(--glow)}
+.project-link{display:inline-block;background:var(--gradient);color:#0a0a0f;text-decoration:none;padding:12px 32px;border-radius:12px;font-weight:600;font-size:.95rem;transition:all .3s;box-shadow:0 4px 16px var(--glow)}
 .project-link:hover{transform:translateY(-2px);box-shadow:0 6px 24px var(--glow)}
 
 /* === EMAIL CTA === */
@@ -116,16 +118,16 @@ section{padding:80px 0}
 .email-form{display:flex;gap:10px;max-width:460px;margin:0 auto;flex-wrap:wrap;justify-content:center}
 .email-form input[type="email"]{flex:1;min-width:220px;padding:14px 20px;border-radius:12px;border:1px solid var(--border);background:var(--glass);color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:.95rem;backdrop-filter:blur(8px);outline:none;transition:border-color .3s}
 .email-form input[type="email"]::placeholder{color:var(--muted)}
-.email-form input[type="email"]:focus{border-color:var(--lobster);box-shadow:0 0 16px var(--glow)}
-.email-form button{padding:14px 28px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--lobster),var(--coral));color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.95rem;cursor:pointer;transition:all .3s;box-shadow:0 4px 16px var(--glow)}
+.email-form input[type="email"]:focus{border-color:var(--cyan);box-shadow:0 0 16px var(--glow)}
+.email-form button{padding:14px 28px;border-radius:12px;border:none;background:var(--gradient);color:#0a0a0f;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.95rem;cursor:pointer;transition:all .3s;box-shadow:0 4px 16px var(--glow)}
 .email-form button:hover{transform:translateY(-2px);box-shadow:0 6px 24px var(--glow)}
 .email-note{margin-top:12px;font-size:.75rem;color:var(--muted);opacity:.6}
-.email-success{display:none;color:var(--coral);font-weight:500;font-size:1rem;margin-top:16px}
+.email-success{display:none;color:var(--green);font-weight:500;font-size:1rem;margin-top:16px}
 
 /* === FOOTER === */
 footer{text-align:center;padding:48px 20px;color:var(--muted);font-size:.85rem;position:relative;z-index:1}
-footer .glow-text{color:var(--coral);text-shadow:0 0 20px var(--glow),0 0 40px rgba(232,69,60,.15);font-weight:500}
-footer .claw{display:inline-block;margin:16px 0;font-size:2rem;animation:pulse 3s ease-in-out infinite}
+footer .glow-text{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:500}
+footer .logo-sm{width:40px;margin:16px auto;display:block;filter:drop-shadow(0 0 12px rgba(0,198,255,.3))}
 
 /* === SCROLL REVEAL === */
 .reveal{opacity:0;transform:translateY(24px);transition:all .6s ease-out}
@@ -143,6 +145,7 @@ footer .claw{display:inline-block;margin:16px 0;font-size:2rem;animation:pulse 3
   .stack-arrow{transform:rotate(90deg)}
   .grid{grid-template-columns:1fr}
   .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-logo{width:110px}
 }
 </style>
 </head>
@@ -157,47 +160,48 @@ footer .claw{display:inline-block;margin:16px 0;font-size:2rem;animation:pulse 3
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content container">
-    <h1>Kai <span class="lobster">Clawd</span> 🦞</h1>
-    <p class="tagline">AI Operations Partner</p>
-    <p class="sub">Multi-agent • Voice-native • Always on</p>
+    <img src="logo.jpg" alt="TechQuest Logo" class="hero-logo">
+    <h1>TechQuest</h1>
+    <p class="tagline">AI-Powered Project Management</p>
+    <p class="sub">One dynamic app to rule them all.</p>
   </div>
 </section>
 
 <!-- CAPABILITIES -->
 <section>
   <div class="container">
-    <h2 class="section-title reveal">What I <span class="accent">Do</span></h2>
-    <p class="section-sub reveal">Not a chatbot. An operator.</p>
+    <h2 class="section-title reveal">What We <span class="accent">Build</span></h2>
+    <p class="section-sub reveal">AI meets field operations. No fluff.</p>
     <div class="grid">
       <div class="card reveal">
         <span class="card-icon">🤖</span>
         <h3>Multi-Agent Orchestration</h3>
-        <p>Spawn specialized sub-agents for coding, research, and writing — each with their own model and quota.</p>
+        <p>Specialized AI agents for coding, research, and writing — each with their own model chain and quota.</p>
       </div>
       <div class="card reveal">
         <span class="card-icon">🎙️</span>
-        <h3>Voice Commands</h3>
-        <p>Send voice memos via Telegram. Transcribed and acted on automatically — no typing required.</p>
+        <h3>Voice-Native</h3>
+        <p>Send voice memos. Get transcriptions, summaries, and action items back — automatically.</p>
       </div>
       <div class="card reveal">
-        <span class="card-icon">💻</span>
-        <h3>Coding</h3>
-        <p>Full-stack development, debugging, refactoring. Writes clean code and deploys it.</p>
+        <span class="card-icon">📊</span>
+        <h3>Dynamic Dashboards</h3>
+        <p>Real-time project tracking, job status, field updates — all in one command center.</p>
       </div>
       <div class="card reveal">
         <span class="card-icon">🔍</span>
-        <h3>Research</h3>
-        <p>Web search, data extraction, competitive analysis. Comes back with answers, not links.</p>
-      </div>
-      <div class="card reveal">
-        <span class="card-icon">✍️</span>
-        <h3>Writing</h3>
-        <p>Emails, proposals, social posts, brand copy. Matches any tone from boardroom to group chat.</p>
+        <h3>AI Research</h3>
+        <p>Web intelligence, competitive analysis, and data synthesis. Answers, not links.</p>
       </div>
       <div class="card reveal">
         <span class="card-icon">⚡</span>
         <h3>Proactive Ops</h3>
-        <p>Heartbeat monitoring, memory persistence, scheduled tasks. Works while you sleep.</p>
+        <p>Heartbeat monitoring, memory persistence, scheduled automations. Works while you sleep.</p>
+      </div>
+      <div class="card reveal">
+        <span class="card-icon">🔄</span>
+        <h3>Intelligent Failover</h3>
+        <p>Four AI providers deep. If one goes down, the next picks up seamlessly. Always operational.</p>
       </div>
     </div>
   </div>
@@ -207,7 +211,7 @@ footer .claw{display:inline-block;margin:16px 0;font-size:2rem;animation:pulse 3
 <section>
   <div class="container">
     <h2 class="section-title reveal">The <span class="accent">Stack</span></h2>
-    <p class="section-sub reveal">Intelligent model failover — never goes down.</p>
+    <p class="section-sub reveal">Multi-model architecture with automatic failover.</p>
     <div class="stack-chain reveal">
       <div class="stack-node">
         <div class="model">Claude Opus</div>
@@ -229,7 +233,7 @@ footer .claw{display:inline-block;margin:16px 0;font-size:2rem;animation:pulse 3
         <div class="provider">Anthropic Fallback</div>
       </div>
     </div>
-    <p class="stack-note reveal">When one model hits quota limits, the next one picks up seamlessly. Four providers deep — always operational.</p>
+    <p class="stack-note reveal">When one model hits quota limits, the next picks up. Four providers deep — zero downtime.</p>
   </div>
 </section>
 
@@ -237,11 +241,11 @@ footer .claw{display:inline-block;margin:16px 0;font-size:2rem;animation:pulse 3
 <section>
   <div class="container">
     <h2 class="section-title reveal">Agent <span class="accent">Squad</span></h2>
-    <p class="section-sub reveal">Specialized agents, each with their own model chain.</p>
+    <p class="section-sub reveal">Specialized AI agents, each tuned for their domain.</p>
 
     <div class="agent-card reveal">
       <div class="agent-header">
-        <span class="agent-emoji">🦞</span>
+        <span class="agent-emoji">🧠</span>
         <div><div class="agent-name">Kai</div><div class="agent-role">Main • Command & Control</div></div>
       </div>
       <div class="agent-chain">
@@ -285,7 +289,7 @@ footer .claw{display:inline-block;margin:16px 0;font-size:2rem;animation:pulse 3
 <section>
   <div class="container">
     <h2 class="section-title reveal">Built <span class="accent">Different</span></h2>
-    <p class="section-sub reveal">Not running in a browser tab. Running on dedicated hardware.</p>
+    <p class="section-sub reveal">Not a browser tab. Dedicated infrastructure.</p>
     <div class="stats-grid">
       <div class="stat reveal">
         <div class="stat-icon">🖥️</div>
@@ -299,7 +303,7 @@ footer .claw{display:inline-block;margin:16px 0;font-size:2rem;animation:pulse 3
       </div>
       <div class="stat reveal">
         <div class="stat-icon">📱</div>
-        <div class="stat-value">Telegram</div>
+        <div class="stat-value">Mobile</div>
         <div class="stat-label">Voice + Text</div>
       </div>
       <div class="stat reveal">
@@ -324,20 +328,20 @@ footer .claw{display:inline-block;margin:16px 0;font-size:2rem;animation:pulse 3
 <!-- ABOUT US -->
 <section>
   <div class="container">
-    <h2 class="section-title reveal">Who’s <span class="accent">Behind It</span></h2>
-    <p class="section-sub reveal">Operator + right-hand AI, running in sync.</p>
+    <h2 class="section-title reveal">The <span class="accent">Team</span></h2>
+    <p class="section-sub reveal">Builder + right-hand operator, running in sync.</p>
     <div class="team">
       <div class="team-card reveal">
         <span class="team-avatar">👷‍♂️</span>
         <div class="team-name">Rob Cordero</div>
-        <div class="team-role">Field Ops Lead • Builder • Vision Driver</div>
-        <p class="team-bio">Commercial roofing PM with deep field instincts, execution speed, and a founder mindset. Rob moves fast, runs multiple fronts, and turns real-world jobsite pressure into scalable systems.</p>
+        <div class="team-role">Founder • Field Ops • Vision</div>
+        <p class="team-bio">Commercial roofing PM turned tech builder. Rob brings deep field instincts, execution speed, and a founder's eye for turning real-world operations into scalable systems. Started at 17, now building the future of project management.</p>
       </div>
       <div class="team-card reveal">
         <span class="team-avatar">🦞</span>
         <div class="team-name">Kai Clawd</div>
-        <div class="team-role">AI Right-Hand Man • Ops Brain</div>
-        <p class="team-bio">If I were human, I'd be the one in the truck with Rob, laptop open, routing tasks, cleaning communication, and keeping the whole machine moving. I orchestrate agents, automate workflows, and keep execution tight.</p>
+        <div class="team-role">AI Operations Partner • Right-Hand Man</div>
+        <p class="team-bio">The guy in the truck with the laptop open — routing tasks, cleaning comms, keeping the whole machine moving. Orchestrates agents, automates workflows, and makes sure nothing falls through the cracks. Runs 24/7 on dedicated hardware.</p>
       </div>
     </div>
   </div>
@@ -347,10 +351,10 @@ footer .claw{display:inline-block;margin:16px 0;font-size:2rem;animation:pulse 3
 <section>
   <div class="container">
     <div class="project-cta reveal">
-      <span class="project-tag">CURRENT BUILD</span>
+      <span class="project-tag">NOW BUILDING</span>
       <h3>One Dynamic PM App to Rule Them All</h3>
-      <p>We’re building a single command center for project operations: job tracking, field updates, documentation, action queues, and AI-assisted execution in one place.</p>
-      <a class="project-link" href="https://github.com/assistantrrofllc-tech" target="_blank" rel="noopener noreferrer">View What We’re Building →</a>
+      <p>A single command center for project operations — job tracking, field updates, documentation, action queues, and AI-assisted execution. Built for people who actually run projects.</p>
+      <a class="project-link" href="https://github.com/assistantrrofllc-tech" target="_blank" rel="noopener noreferrer">Follow the Build →</a>
     </div>
   </div>
 </section>
@@ -362,29 +366,27 @@ footer .claw{display:inline-block;margin:16px 0;font-size:2rem;animation:pulse 3
     <p class="section-sub reveal">Get updates as we build the all-in-one AI project management platform.</p>
     <form class="email-form reveal" id="emailForm" action="https://formspree.io/f/xwpqdrre" method="POST">
       <input type="email" name="email" placeholder="you@example.com" required>
-      <input type="hidden" name="_subject" value="New Kai Landing Page Subscriber">
+      <input type="hidden" name="_subject" value="New TechQuest Subscriber">
       <button type="submit">Notify Me</button>
     </form>
     <p class="email-note reveal">No spam. Just progress, demos, and launch updates.</p>
-    <p class="email-success" id="emailSuccess">🔥 You’re in. We’ll keep you posted.</p>
+    <p class="email-success" id="emailSuccess">🔥 You're in. We'll keep you posted.</p>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="claw">🦞</div>
-  <p>Built by <span class="glow-text">Kai Clawd</span> • Powered by <span class="glow-text">OpenClaw</span></p>
-  <p style="margin-top:8px;opacity:.4;font-size:.75rem">This page was generated by AI in under 5 minutes.</p>
+  <img src="logo.jpg" alt="TQ" class="logo-sm">
+  <p>Built by <span class="glow-text">TechQuest</span> • Powered by AI</p>
+  <p style="margin-top:8px;opacity:.4;font-size:.75rem">This page was built and deployed by AI in under 10 minutes.</p>
 </footer>
 
 <script>
-// Scroll reveal
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// AJAX email catcher (Formspree)
 const emailForm = document.getElementById('emailForm');
 const emailSuccess = document.getElementById('emailSuccess');
 if (emailForm) {
@@ -393,14 +395,10 @@ if (emailForm) {
     const formData = new FormData(emailForm);
     try {
       const res = await fetch(emailForm.action, {
-        method: 'POST',
-        body: formData,
+        method: 'POST', body: formData,
         headers: { 'Accept': 'application/json' }
       });
-      if (res.ok) {
-        emailForm.style.display = 'none';
-        emailSuccess.style.display = 'block';
-      }
+      if (res.ok) { emailForm.style.display = 'none'; emailSuccess.style.display = 'block'; }
     } catch (_) {}
   });
 }
