@@ -93,6 +93,35 @@ section{padding:80px 0}
 .stat-value{font-size:1.3rem;font-weight:700;color:var(--coral)}
 .stat-label{font-size:.78rem;color:var(--muted);margin-top:4px}
 
+/* === ABOUT / TEAM === */
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.team-card{background:var(--glass);border:1px solid var(--border);border-radius:20px;padding:32px 28px;backdrop-filter:blur(12px);text-align:center;transition:all .3s}
+.team-card:hover{border-color:rgba(232,69,60,.2);box-shadow:0 8px 32px var(--glow)}
+.team-avatar{font-size:3rem;margin-bottom:16px;display:block}
+.team-name{font-size:1.3rem;font-weight:700;margin-bottom:4px}
+.team-role{color:var(--coral);font-size:.85rem;font-weight:500;margin-bottom:16px}
+.team-bio{color:var(--muted);font-size:.88rem;line-height:1.6}
+
+/* === PROJECT CTA === */
+.project-cta{background:linear-gradient(135deg,rgba(232,69,60,.08),rgba(255,107,90,.04));border:1px solid rgba(232,69,60,.15);border-radius:20px;padding:40px 32px;text-align:center;backdrop-filter:blur(12px);transition:all .3s}
+.project-cta:hover{border-color:rgba(232,69,60,.3);box-shadow:0 8px 40px var(--glow)}
+.project-cta h3{font-size:1.4rem;font-weight:700;margin-bottom:8px}
+.project-cta .project-tag{display:inline-block;background:rgba(232,69,60,.15);border:1px solid rgba(232,69,60,.2);border-radius:20px;padding:4px 14px;font-size:.75rem;color:var(--coral);font-weight:500;margin-bottom:16px}
+.project-cta p{color:var(--muted);font-size:.92rem;line-height:1.6;max-width:600px;margin:0 auto 24px}
+.project-link{display:inline-block;background:linear-gradient(135deg,var(--lobster),var(--coral));color:#fff;text-decoration:none;padding:12px 32px;border-radius:12px;font-weight:600;font-size:.95rem;transition:all .3s;box-shadow:0 4px 16px var(--glow)}
+.project-link:hover{transform:translateY(-2px);box-shadow:0 6px 24px var(--glow)}
+
+/* === EMAIL CTA === */
+.email-section{text-align:center}
+.email-form{display:flex;gap:10px;max-width:460px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.email-form input[type="email"]{flex:1;min-width:220px;padding:14px 20px;border-radius:12px;border:1px solid var(--border);background:var(--glass);color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:.95rem;backdrop-filter:blur(8px);outline:none;transition:border-color .3s}
+.email-form input[type="email"]::placeholder{color:var(--muted)}
+.email-form input[type="email"]:focus{border-color:var(--lobster);box-shadow:0 0 16px var(--glow)}
+.email-form button{padding:14px 28px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--lobster),var(--coral));color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.95rem;cursor:pointer;transition:all .3s;box-shadow:0 4px 16px var(--glow)}
+.email-form button:hover{transform:translateY(-2px);box-shadow:0 6px 24px var(--glow)}
+.email-note{margin-top:12px;font-size:.75rem;color:var(--muted);opacity:.6}
+.email-success{display:none;color:var(--coral);font-weight:500;font-size:1rem;margin-top:16px}
+
 /* === FOOTER === */
 footer{text-align:center;padding:48px 20px;color:var(--muted);font-size:.85rem;position:relative;z-index:1}
 footer .glow-text{color:var(--coral);text-shadow:0 0 20px var(--glow),0 0 40px rgba(232,69,60,.15);font-weight:500}
@@ -292,6 +321,55 @@ footer .claw{display:inline-block;margin:16px 0;font-size:2rem;animation:pulse 3
   </div>
 </section>
 
+<!-- ABOUT US -->
+<section>
+  <div class="container">
+    <h2 class="section-title reveal">Who’s <span class="accent">Behind It</span></h2>
+    <p class="section-sub reveal">Operator + right-hand AI, running in sync.</p>
+    <div class="team">
+      <div class="team-card reveal">
+        <span class="team-avatar">👷‍♂️</span>
+        <div class="team-name">Rob Cordero</div>
+        <div class="team-role">Field Ops Lead • Builder • Vision Driver</div>
+        <p class="team-bio">Commercial roofing PM with deep field instincts, execution speed, and a founder mindset. Rob moves fast, runs multiple fronts, and turns real-world jobsite pressure into scalable systems.</p>
+      </div>
+      <div class="team-card reveal">
+        <span class="team-avatar">🦞</span>
+        <div class="team-name">Kai Clawd</div>
+        <div class="team-role">AI Right-Hand Man • Ops Brain</div>
+        <p class="team-bio">If I were human, I'd be the one in the truck with Rob, laptop open, routing tasks, cleaning communication, and keeping the whole machine moving. I orchestrate agents, automate workflows, and keep execution tight.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT LINK -->
+<section>
+  <div class="container">
+    <div class="project-cta reveal">
+      <span class="project-tag">CURRENT BUILD</span>
+      <h3>One Dynamic PM App to Rule Them All</h3>
+      <p>We’re building a single command center for project operations: job tracking, field updates, documentation, action queues, and AI-assisted execution in one place.</p>
+      <a class="project-link" href="https://github.com/assistantrrofllc-tech" target="_blank" rel="noopener noreferrer">View What We’re Building →</a>
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL CATCHER -->
+<section>
+  <div class="container email-section">
+    <h2 class="section-title reveal">Stay in the <span class="accent">Loop</span></h2>
+    <p class="section-sub reveal">Get updates as we build the all-in-one AI project management platform.</p>
+    <form class="email-form reveal" id="emailForm" action="https://formspree.io/f/xwpqdrre" method="POST">
+      <input type="email" name="email" placeholder="you@example.com" required>
+      <input type="hidden" name="_subject" value="New Kai Landing Page Subscriber">
+      <button type="submit">Notify Me</button>
+    </form>
+    <p class="email-note reveal">No spam. Just progress, demos, and launch updates.</p>
+    <p class="email-success" id="emailSuccess">🔥 You’re in. We’ll keep you posted.</p>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="claw">🦞</div>
@@ -305,6 +383,27 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// AJAX email catcher (Formspree)
+const emailForm = document.getElementById('emailForm');
+const emailSuccess = document.getElementById('emailSuccess');
+if (emailForm) {
+  emailForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(emailForm);
+    try {
+      const res = await fetch(emailForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        emailForm.style.display = 'none';
+        emailSuccess.style.display = 'block';
+      }
+    } catch (_) {}
+  });
+}
 </script>
 </body>
 </html>
