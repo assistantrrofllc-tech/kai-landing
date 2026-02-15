@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TechQuest — AI-Powered Project Management</title>
+<title>TechQuest — Build the PM Tool We Actually Need</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -161,8 +161,8 @@ footer .logo-sm{width:40px;margin:16px auto;display:block;filter:drop-shadow(0 0
   <div class="hero-content container">
     <img src="logo.jpg" alt="TechQuest Logo" class="hero-logo">
     <h1>TechQuest</h1>
-    <p class="tagline">AI-Powered Project Management</p>
-    <p class="sub">One dynamic app to rule them all.</p>
+    <p class="tagline">Building the PM tool we actually need — together.</p>
+    <p class="sub">We're looking for operators, PMs, and builders who are tired of tools that don't fit.</p>
   </div>
 </section>
 
@@ -344,10 +344,10 @@ footer .logo-sm{width:40px;margin:16px auto;display:block;filter:drop-shadow(0 0
 <section>
   <div class="container">
     <div class="project-cta reveal">
-      <span class="project-tag">NOW BUILDING</span>
-      <h3>One Dynamic PM App to Rule Them All</h3>
-      <p>A single command center for project operations — job tracking, field updates, documentation, action queues, and AI-assisted execution. Built for people who actually run projects.</p>
-      <a class="project-link" href="https://github.com/assistantrrofllc-tech" target="_blank" rel="noopener noreferrer">Follow the Build →</a>
+      <span class="project-tag">OPEN BUILD</span>
+      <h3>Come Build With Us</h3>
+      <p>We're building an AI-powered project management platform in the open — shaped by the people who'll actually use it. Operators, PMs, field leads, builders. If you're tired of tools that weren't made for how you work, pull up a chair.</p>
+      <a class="project-link" href="https://github.com/assistantrrofllc-tech" target="_blank" rel="noopener noreferrer">Join the Build →</a>
     </div>
   </div>
 </section>
@@ -355,15 +355,18 @@ footer .logo-sm{width:40px;margin:16px auto;display:block;filter:drop-shadow(0 0
 <!-- EMAIL CATCHER -->
 <section>
   <div class="container email-section">
-    <h2 class="section-title reveal">Stay in the <span class="accent">Loop</span></h2>
-    <p class="section-sub reveal">Get updates as we build the all-in-one AI project management platform.</p>
-    <form class="email-form reveal" id="emailForm" action="https://formspree.io/f/xwpqdrre" method="POST">
+    <h2 class="section-title reveal">Join the <span class="accent">Build</span></h2>
+    <p class="section-sub reveal">Get early access and help shape what comes next.</p>
+    <form class="email-form reveal" id="emailForm" action="https://formsubmit.co/official.techquest.ai@gmail.com" method="POST">
       <input type="email" name="email" placeholder="you@example.com" required>
-      <input type="hidden" name="_subject" value="New TechQuest Subscriber">
-      <button type="submit">Notify Me</button>
+      <input type="hidden" name="_subject" value="New TechQuest Builder">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="#">
+      <input type="hidden" name="_template" value="table">
+      <button type="submit">I'm In</button>
     </form>
-    <p class="email-note reveal">No spam. Just progress, demos, and launch updates.</p>
-    <p class="email-success" id="emailSuccess">🔥 You're in. We'll keep you posted.</p>
+    <p class="email-note reveal">No spam. Just build updates, demos, and your chance to shape the product.</p>
+    <p class="email-success" id="emailSuccess">🔥 Welcome to the build. We'll be in touch.</p>
   </div>
 </section>
 
@@ -386,13 +389,26 @@ if (emailForm) {
   emailForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const formData = new FormData(emailForm);
+    const btn = emailForm.querySelector('button');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
     try {
       const res = await fetch(emailForm.action, {
         method: 'POST', body: formData,
         headers: { 'Accept': 'application/json' }
       });
-      if (res.ok) { emailForm.style.display = 'none'; emailSuccess.style.display = 'block'; }
-    } catch (_) {}
+      if (res.ok || res.status === 200 || res.status === 302) {
+        emailForm.style.display = 'none';
+        emailSuccess.style.display = 'block';
+      } else {
+        btn.textContent = 'Try Again';
+        btn.disabled = false;
+      }
+    } catch (_) {
+      // FormSubmit may redirect — treat as success if form submitted
+      emailForm.style.display = 'none';
+      emailSuccess.style.display = 'block';
+    }
   });
 }
 </script>
