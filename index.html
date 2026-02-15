@@ -88,9 +88,7 @@ section{padding:80px 0}
 .agent-emoji{font-size:1.8rem}
 .agent-name{font-weight:600;font-size:1.1rem}
 .agent-role{color:var(--muted);font-size:.8rem}
-.agent-chain{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-.agent-chain span{background:rgba(0,198,255,.08);border:1px solid rgba(0,198,255,.12);border-radius:6px;padding:3px 10px;font-size:.75rem;color:var(--teal)}
-.agent-chain span:first-child{background:rgba(0,198,255,.15);border-color:rgba(0,198,255,.25);color:#fff}
+.agent-bio{color:var(--muted);font-size:.85rem;line-height:1.6;margin:0}
 
 /* === STATS === */
 .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
@@ -105,6 +103,7 @@ section{padding:80px 0}
 .team-card{background:var(--glass);border:1px solid var(--border);border-radius:20px;padding:32px 28px;backdrop-filter:blur(12px);text-align:center;transition:all .3s}
 .team-card:hover{border-color:rgba(0,198,255,.2);box-shadow:0 8px 32px var(--glow)}
 .team-avatar{font-size:3rem;margin-bottom:16px;display:block}
+.team-photo{width:120px;height:120px;border-radius:50%;object-fit:cover;margin:0 auto 16px;display:block;border:2px solid rgba(0,198,255,.2);box-shadow:0 0 20px var(--glow)}
 .team-name{font-size:1.3rem;font-weight:700;margin-bottom:4px}
 .team-role{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:.85rem;font-weight:500;margin-bottom:16px}
 .team-bio{color:var(--muted);font-size:.88rem;line-height:1.6}
@@ -256,42 +255,34 @@ footer .logo-sm{width:40px;margin:16px auto;display:block;filter:drop-shadow(0 0
 
     <div class="agent-card reveal">
       <div class="agent-header">
-        <span class="agent-emoji">🧠</span>
-        <div><div class="agent-name">Kai</div><div class="agent-role">Main • Command & Control</div></div>
+        <span class="agent-emoji">🦞</span>
+        <div><div class="agent-name">Kai</div><div class="agent-role">Head Orchestrator</div></div>
       </div>
-      <div class="agent-chain">
-        <span>Opus</span><span>AG Opus</span><span>Codex</span>
-      </div>
+      <p class="agent-bio">The command center. Kai coordinates the entire agent squad, routes tasks to the right specialist, manages memory across sessions, and keeps operations running 24/7. Your one point of contact — he handles the rest.</p>
     </div>
 
     <div class="agent-card reveal">
       <div class="agent-header">
-        <span class="agent-emoji">💻</span>
-        <div><div class="agent-name">Coder</div><div class="agent-role">Development • Debugging • Deploy</div></div>
+        <span class="agent-emoji">⚡</span>
+        <div><div class="agent-name">Volt</div><div class="agent-role">Lead Developer</div></div>
       </div>
-      <div class="agent-chain">
-        <span>AG Opus</span><span>Codex</span><span>Sonnet</span>
-      </div>
+      <p class="agent-bio">Full-stack builder. Volt writes production code, debugs issues, deploys to GitHub, and architects systems from scratch. Thinks in code, ships fast, and doesn't leave loose ends.</p>
     </div>
 
     <div class="agent-card reveal">
       <div class="agent-header">
-        <span class="agent-emoji">🔍</span>
-        <div><div class="agent-name">Research</div><div class="agent-role">Search • Analysis • Intelligence</div></div>
+        <span class="agent-emoji">🔭</span>
+        <div><div class="agent-name">Scout</div><div class="agent-role">Research & Intelligence</div></div>
       </div>
-      <div class="agent-chain">
-        <span>AG Sonnet</span><span>Gemini Flash</span><span>Codex</span>
-      </div>
+      <p class="agent-bio">The deep diver. Scout searches the web, synthesizes data, runs competitive analysis, and delivers actionable insights — not just links. Comes back with answers you can act on.</p>
     </div>
 
     <div class="agent-card reveal">
       <div class="agent-header">
-        <span class="agent-emoji">✍️</span>
-        <div><div class="agent-name">Writer</div><div class="agent-role">Content • Copy • Communications</div></div>
+        <span class="agent-emoji">🖋️</span>
+        <div><div class="agent-name">Quill</div><div class="agent-role">Content & Communications</div></div>
       </div>
-      <div class="agent-chain">
-        <span>AG Sonnet Think</span><span>Codex</span><span>Sonnet</span>
-      </div>
+      <p class="agent-bio">The voice. Quill crafts emails, proposals, social posts, and brand copy. Adapts tone from boardroom to group chat. Every word intentional, every message polished.</p>
     </div>
   </div>
 </section>
@@ -300,37 +291,37 @@ footer .logo-sm{width:40px;margin:16px auto;display:block;filter:drop-shadow(0 0
 <section>
   <div class="container">
     <h2 class="section-title reveal">Built <span class="accent">Different</span></h2>
-    <p class="section-sub reveal">Not a browser tab. Dedicated infrastructure.</p>
+    <p class="section-sub reveal">Not another SaaS dashboard. Real infrastructure.</p>
     <div class="stats-grid">
       <div class="stat reveal">
-        <div class="stat-icon">🖥️</div>
-        <div class="stat-value">Mac mini</div>
-        <div class="stat-label">Dedicated Hardware</div>
-      </div>
-      <div class="stat reveal">
-        <div class="stat-icon">⏰</div>
-        <div class="stat-value">24/7</div>
-        <div class="stat-label">Always Online</div>
-      </div>
-      <div class="stat reveal">
-        <div class="stat-icon">📱</div>
-        <div class="stat-value">Mobile</div>
-        <div class="stat-label">Voice + Text</div>
-      </div>
-      <div class="stat reveal">
-        <div class="stat-icon">🧠</div>
-        <div class="stat-value">Persistent</div>
-        <div class="stat-label">Long-Term Memory</div>
-      </div>
-      <div class="stat reveal">
-        <div class="stat-icon">🤖</div>
-        <div class="stat-value">4 Agents</div>
-        <div class="stat-label">Specialized Squad</div>
+        <div class="stat-icon">⚡</div>
+        <div class="stat-value">AI-Native</div>
+        <div class="stat-label">Built on LLMs from day one</div>
       </div>
       <div class="stat reveal">
         <div class="stat-icon">🔄</div>
-        <div class="stat-value">4 Models</div>
-        <div class="stat-label">Auto Failover</div>
+        <div class="stat-value">Multi-Model</div>
+        <div class="stat-label">Automatic provider failover</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-icon">📱</div>
+        <div class="stat-value">Mobile-First</div>
+        <div class="stat-label">Voice, text, anywhere</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-icon">🧠</div>
+        <div class="stat-value">Memory</div>
+        <div class="stat-label">Context that persists</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-icon">🏗️</div>
+        <div class="stat-value">Field-Tested</div>
+        <div class="stat-label">Born from real jobsites</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-icon">🤖</div>
+        <div class="stat-value">Agent Squad</div>
+        <div class="stat-label">Specialized AI workers</div>
       </div>
     </div>
   </div>
@@ -343,13 +334,13 @@ footer .logo-sm{width:40px;margin:16px auto;display:block;filter:drop-shadow(0 0
     <p class="section-sub reveal">Builder + right-hand operator, running in sync.</p>
     <div class="team">
       <div class="team-card reveal">
-        <span class="team-avatar">👷‍♂️</span>
+        <img src="rob-final.jpg" alt="Rob Cordero" class="team-photo">
         <div class="team-name">Rob Cordero</div>
         <div class="team-role">Founder • Field Ops • Vision</div>
         <p class="team-bio">Commercial roofing PM turned tech builder. Rob brings deep field instincts, execution speed, and a founder's eye for turning real-world operations into scalable systems. Started at 17, now building the future of project management.</p>
       </div>
       <div class="team-card reveal">
-        <span class="team-avatar">🦞</span>
+        <img src="kai-crop.jpg" alt="Kai Clawd" class="team-photo">
         <div class="team-name">Kai Clawd</div>
         <div class="team-role">AI Operations Partner • Right-Hand Man</div>
         <p class="team-bio">The guy in the truck with the laptop open — routing tasks, cleaning comms, keeping the whole machine moving. Orchestrates agents, automates workflows, and makes sure nothing falls through the cracks. Runs 24/7 on dedicated hardware.</p>
