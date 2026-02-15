@@ -125,6 +125,14 @@ section{padding:80px 0}
 .email-note{margin-top:12px;font-size:.75rem;color:var(--muted);opacity:.6}
 .email-success{display:none;color:var(--green);font-weight:500;font-size:1rem;margin-top:16px}
 
+/* === SUPPORT SECTION === */
+.support-card{background:var(--glass);border:1px solid var(--border);border-radius:16px;padding:32px 28px;text-align:center;backdrop-filter:blur(12px);transition:all .3s;max-width:500px;margin:0 auto}
+.support-card:hover{border-color:rgba(0,198,255,.15);box-shadow:0 4px 24px rgba(0,198,255,.08)}
+.support-card h3{font-size:1.2rem;font-weight:600;margin-bottom:10px;color:var(--text)}
+.support-card p{color:var(--muted);font-size:.88rem;line-height:1.5;margin-bottom:20px}
+.support-link{display:inline-block;background:rgba(0,198,255,.08);border:1px solid rgba(0,198,255,.15);color:var(--cyan);text-decoration:none;padding:10px 24px;border-radius:10px;font-weight:500;font-size:.9rem;transition:all .3s}
+.support-link:hover{background:rgba(0,198,255,.12);border-color:rgba(0,198,255,.25);box-shadow:0 4px 16px rgba(0,198,255,.15);transform:translateY(-2px)}
+
 /* === FOOTER === */
 footer{text-align:center;padding:48px 20px;color:var(--muted);font-size:.85rem;position:relative;z-index:1}
 footer .glow-text{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:500}
@@ -367,6 +375,17 @@ footer .logo-sm{width:40px;margin:16px auto;display:block;filter:drop-shadow(0 0
     </form>
     <p class="email-note reveal">No spam. Just build updates, demos, and your chance to shape the product.</p>
     <p class="email-success" id="emailSuccess">🔥 Welcome to the build. We'll be in touch.</p>
+  </div>
+</section>
+
+<!-- SUPPORT US -->
+<section style="padding:60px 0">
+  <div class="container">
+    <div class="support-card reveal">
+      <h3>Support the Build</h3>
+      <p>Rep the brand and help fuel the operation. Every purchase keeps the servers running and the code shipping.</p>
+      <a href="#merch" class="support-link">Shop Merch →</a>
+    </div>
   </div>
 </section>
 

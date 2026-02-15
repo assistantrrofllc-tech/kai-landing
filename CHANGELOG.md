@@ -4,6 +4,24 @@ All notable changes to the TechQuest landing page.
 
 ---
 
+## [2026-02-15] — Merch Support Section Added
+
+### Added
+- **Support Us section** — New subtle section between email signup and footer
+  - Heading: "Support the Build"
+  - Brief copy about repping the brand and supporting operations
+  - Link/button to merch store (placeholder URL: #merch)
+  - Styled with glassmorphism matching site theme
+  - Low-key placement — not competing with main CTAs
+- **CSS for .support-card and .support-link** — Matching dark theme with cyan accents
+
+### Notes
+- Preparing for print-on-demand merch launch (polo shirts)
+- Section designed to be subtle and supportive, not salesy
+- Placeholder link will be updated when merch store goes live
+
+---
+
 ## [2026-02-15] — Co-Builder Pivot + Form Fix
 
 ### Changed
